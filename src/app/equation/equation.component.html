@@ -1,1 +1,7 @@
-<p>equation works!</p>
+<form [formGroup]="mathForm">
+  {{ a }} + {{ b }}
+  <input formControlName="answer" />
+</form>
+
+
+{{ secondsPerSolution | number: '1.1-3' }}
