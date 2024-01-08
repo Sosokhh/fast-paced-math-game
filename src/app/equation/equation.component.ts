@@ -37,8 +37,6 @@ export class EquationComponent implements OnInit {
           b: this.randomNumber(),
           answer: ''
         })
-
-
       }
     )
   }
