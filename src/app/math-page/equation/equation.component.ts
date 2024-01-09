@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {MathValidators} from "../../math-validators";
 import {delay, filter, scan} from "rxjs";
@@ -9,6 +9,7 @@ import {delay, filter, scan} from "rxjs";
   styleUrls: ['./equation.component.scss']
 })
 export class EquationComponent implements OnInit {
+  @Input() timer: boolean = false;
   secondsPerSolution = 0;
   score = 0;
   mathForm = new FormGroup({
