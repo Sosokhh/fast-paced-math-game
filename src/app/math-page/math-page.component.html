@@ -1,0 +1,9 @@
+
+<div style="display: flex; width: 200%">
+  <div class="screen" [ngClass]="{'up' : currentScreen >= 1}">
+    <app-start></app-start>
+  </div>
+  <div class="screen" [ngClass]="{'up' : currentScreen === 2}">
+    <app-equation></app-equation>
+  </div>
+</div>

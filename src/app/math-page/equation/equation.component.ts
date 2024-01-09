@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {MathValidators} from "../math-validators";
+import {MathValidators} from "../../math-validators";
 import {delay, filter, scan} from "rxjs";
 
 @Component({
@@ -10,6 +10,7 @@ import {delay, filter, scan} from "rxjs";
 })
 export class EquationComponent implements OnInit {
   secondsPerSolution = 0;
+  score = 0;
   mathForm = new FormGroup({
     a: new FormControl(this.randomNumber()),
     b: new FormControl(this.randomNumber()),
@@ -32,6 +33,7 @@ export class EquationComponent implements OnInit {
         this.secondsPerSolution = (
           new Date().getTime() - startTime.getTime()
         ) / numberSolved / 1000;
+        this.score++;
         this.mathForm.setValue({
           a: this.randomNumber(),
           b: this.randomNumber(),
@@ -50,7 +52,7 @@ export class EquationComponent implements OnInit {
   }
 
   randomNumber() {
-    return Math.floor(Math.random() * 10);
+    return Math.floor(Math.random() * 100);
   }
 
 }
